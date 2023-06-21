@@ -86,3 +86,30 @@ Azure Fundamental Learning notes
        and compliance rules.
 
         Ex, US DoD Centeral, US Gov Virginia etc.
+
+# Azure Management Infra
+
+### Azure Resource Groups
+
+    - Azure Resources - Any resource we use in Azure is Resource.
+    - These Azure Resources are grouped together under a Resource Group.
+    - A Resource can only belong to only one Resource Group.
+    - If a Resource is moved from one Resource Group to another it won't have any access or privilage from previous group.
+    - All the Resources from a Resource group will inherit rules from its Resource group.
+    - Any change applied to Resource group will impact all the resourrces under that resource group.
+    - When we delete a Resource group all the resource under that group will be deleted.
+
+### Azure Subscriptions
+
+    - Azure Subcriptions are logical grouping of Resource Groups to manage billing and scalability of resources.
+    - A Subscription provide an Authenticated and authorized access to Azure product and services.
+    - Azure Subscriptions are links to azure account.
+    - Azure subscribtions are grouped under two boundaries.
+
+       - Billing boundary - Determinses how an Azure account is billed for using Azure.
+       - Access Control boundary - Access control can be applied to Subscription level. These access level
+                                   will be applied to all the Resource groups under that Subscription.
+### Azure Management Group
+
+    - A Management Group is root level heirarchy. Under a Management Group multiple Subscriptions will be grouped.
+    - We can create Azure Role based Access control (Azure RBAC) which can be applied to entire Management group.
