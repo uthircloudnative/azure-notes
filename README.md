@@ -41,3 +41,48 @@ Azure Fundamental Learning notes
 
     upgrade // This will update upgrade CLI
 ```
+
+# Azure Physical Infra
+
+### Regions
+
+   - Region is a geographical area on the planet it contains one ore more data centers.
+   - Whenever we deploy a resource we need to choose a region.
+   - There are few Azure services for which we don't need to select a particular region.
+        - Azure Active Directory
+        - Azure Traffic Manager
+        - Azure DNS
+
+### Availability Zones
+
+    - Availability zones are physically sperated datacenters within a specific Region.
+    - A Region consist of one or more Availabilty Zones.
+    - To ensure resiliency a minimum of three seperate availability zones are present in all availability zone-enabled regions.
+      But not all Azure Regions currently support availability zones.
+    - If we want to have high availabilty of our apps its better to create a reduantant stack in another availabilty zone.
+      Mostly AZ's are for VM's, managed disks, load balancers and SQL DBs.
+
+    - Azure services that support AZ's will fall in following 3 categorries.
+
+      - Zonal Services - These services are tagged to a specific zone (VM's Managed Disks, IP address)
+
+      - Zone-Redundant Services - The platform replicates automatically across zones (zone-redundant storage, SQL Database)
+
+      - Non-Regional Services - Services are always available from Azure geographies and resilient to zone-wide outages as well as region-wide outages.
+
+### Region Pais (West US & East US)
+
+    - Two Azure Regions are paired with one another on the same geography.
+    - These paired regions are mostly 300 miles apart eachother.
+    - Eventhough Regions pairs will have maximum protection in the event of any disaster not all
+      the services are have the ability to fall back.
+    - Most of these region pairs have bidirectional pairs. Each regions pairs will have backup of there region and vice versa.
+      Ex West US & East US both have their own back up.
+    - There are few regions are only unidirectional. Ex West India has Backup in South India but South India has back up in Central India.
+
+### Sovereign Regions
+
+     - These kind of regions are instances of Azure that are isolated from main Azure infra due government regulatory
+       and compliance rules.
+
+        Ex, US DoD Centeral, US Gov Virginia etc.
