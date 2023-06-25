@@ -127,7 +127,7 @@ Azure Fundamental Learning notes
    - It provides an option of virtualized physical infrstructure which is hosted on the cloud.
    - User only need to pay as long as VM is running or in use.
 
-### Azure VM Scale Sets (Grouping of identical VM's to achieve Scale on demand)
+### Azure VM Scale Sets (Grouping of identical VM's to achieve Scale on demand - IaaS offering)
 
   - In Azure Scale sets are grouping of identical VMs together with load balancer.
   - This type of grouping makes it easy to scale in or scale out number of VM's required based on the need and load
@@ -175,7 +175,7 @@ Azure Fundamental Learning notes
   - This will reduce need to have Desktop Virtualization support team in house.
   - Also provisioned Desktops are billed on the usage basis only.
 
-  ### Azure Containers (To run different type of OS on single host)
+  ### Azure Containers (To run different type of OS on single host - PaaS offering)
 
    - Azure containers will provide ability to run different type of OS in single host.
    - Unlike in VM we can only run or host one type of OS where as in Containers we can inclue different type of OS
@@ -183,5 +183,45 @@ Azure Fundamental Learning notes
    - Compare to VM's AZ Containers are light weight in nature where it can be provisoned and scaled quickly.
    - Conatiners are great choice when we want to run different types of OS specific apps in sinlge host.
    - AZ containers are example of PaaS offering.
+
+### Azure Functions (Run code on demand Event driven - Serverless)
+
+  - Azure Functions are serverless option to run our code on demand.
+  - Where developer no need to worry about underlying infrastructure and its availability. Only
+    give the code which neeeds to be executed based on event AZ will take care of infra needed to run it.
+  - With Azure Function we can achieve Scalability, Performance and Pay as you use model.
+  - Azure Functions are great choice when we want to run a specific code on need basis and it needs to be completed in
+    short span of time.
+
+### Azure App Service (An offering to build and run different type of Apps without worry about infra - PaaS)
+
+  - Azure App service enables us to develop and host web apps, API apps, backgroundJobs, mobile apps without
+    worry about the infrastructure in which it runs.
+  - As Azure Apps will provide set of tools to enable hosting these apps it makes easy to up and running an app or API.
+  - As a developer we don't need to provision infra and need to take care load balance configuration of the apps
+    or deployment and scalability of the apps. All these concerns are handled through Azure App service.
+  - All these feature will let developers only focus on building business apps and remaing cocerns will be taken care
+    by Azure.
+  - It can suppirt multiple languages like Java, Python, .NET, Ruby etc.
+
+ Type of Azure App Services
+
+    - Web Apps -> It supports hosting of Web apps using languages like Java, Python, .NET, Ruby etc. in Windows or
+      Linux OS.
+
+    - API Apps -> It support development and hosting or REST APIs using language of our choice. We can get full Swagger support.
+                  These API's can be pacakged and publised in Azure market place and can be accessed in any HTTP supported clients.
+
+    - WbJobs -> WebJobs can be used to run a backend jobs in any popular language of choice. Using this we can schedule or
+                trigger these Jobs.
+
+    - Mobile Apps -> This is used to build and deploy iOS or Android Apps.
+
+ ### Advantage of Azuer Apps
+
+   - Deployment and management are integrated into the platform.
+   - Endpoints can be secured.
+   - Sites can be scaled quickly to handle high traffic.
+   - Build-in load balancing and traffic manager provide high availability.
 
 
