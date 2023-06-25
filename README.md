@@ -113,3 +113,64 @@ Azure Fundamental Learning notes
 
     - A Management Group is root level heirarchy. Under a Management Group multiple Subscriptions will be grouped.
     - We can create Azure Role based Access control (Azure RBAC) which can be applied to entire Management group.
+
+# Azure architecture and services
+
+### Azure Virtual Machines
+
+   - VM's are physical servers which is hosted or provisioned on the cloud.
+   - Its fundamental building block of an infrastructure where applications will be run.
+   - In cloud terms VM's fall under IaaS category where user of VM have more control and responsibility over it.
+   - User's of VM needs to take care of update and patching of OS and other tools installed in the VM's.
+   - These VM's can be provisioned quickly using image templates where each templates will have predefined configs.
+     Similarly we can create custom configuration image templates as per our requirements.
+   - It provides an option of virtualized physical infrstructure which is hosted on the cloud.
+   - User only need to pay as long as VM is running or in use.
+
+### Azure VM Scale Sets (Grouping of identical VM's to achieve Scale on demand)
+
+  - In Azure Scale sets are grouping of identical VMs together with load balancer.
+  - This type of grouping makes it easy to scale in or scale out number of VM's required based on the need and load
+    among the VM's will be managed effectively and efficently.
+  - By grouping like this its easy to monitor the utilization of each set of VM's based on different factors.
+
+### Azure VM Availability Sets (Deals with Availability of physical infra)
+
+  - Availability Sets make sure availability of physical infrastructure by grouping VMs.
+  - It's ensures VMs stagger update and have high availability of VMs during any power and network connectivity issues.
+  - AZ have two type of Availability Sets.
+
+       - Update domain
+       - Fault domain
+
+  #### Update domain
+
+    - This groups VM's in a way it can be rebooted at the same time. This helps when one group update is inprogress
+      other group will be online to make sure no disruption.
+    - An update domain group of VMs given 30 mins to complete the update then next group update will be started.
+
+#### Fault domain
+
+    - In this type VMs are grouped and make sure each group will have different power and network conncectivity.
+    - Each fault domain VM's will be hosted on different network and has it's own power.
+    - By default in this grouping VMs will be grouped under 3 different fault domains.
+
+#### VM Resources
+
+   - VM's are provisioned based on following 3 resource allocation.
+
+     - Size (purpose, number of processor cores, and amount of RAM)
+     - Storage disks (hard disk drives,solid state drives etc)
+     - Networking (virtual network, public IP address and port configuration)
+    
+### Azure Virtual Desktop (A local desktop on the cloud)
+
+    - It's cloud hosted Windows it can be accessed any location through browser.
+    - With this we can move our local Windows provisioning for application development of any purpose to the cloud.
+    - Provisoning of Windows systems will be done in minitues.
+    - It will enhance security as these cloud hosted machines are already integrated with other AZ services
+      like AZ Active Directory (AZ AD) and AZ Role based Access (RBAC).
+    - With this kind of integration we can easily control who can access what type of resources.
+    - Also in same single VM we can enable multiple users to access different Desktops.
+    - This will reduce need to have Desktop Virtualization support team in house.
+    - Also provisioned Desktops are billed on the usage basis only.
