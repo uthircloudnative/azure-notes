@@ -165,12 +165,23 @@ Azure Fundamental Learning notes
     
 ### Azure Virtual Desktop (A local desktop on the cloud)
 
-    - It's cloud hosted Windows it can be accessed any location through browser.
-    - With this we can move our local Windows provisioning for application development of any purpose to the cloud.
-    - Provisoning of Windows systems will be done in minitues.
-    - It will enhance security as these cloud hosted machines are already integrated with other AZ services
-      like AZ Active Directory (AZ AD) and AZ Role based Access (RBAC).
-    - With this kind of integration we can easily control who can access what type of resources.
-    - Also in same single VM we can enable multiple users to access different Desktops.
-    - This will reduce need to have Desktop Virtualization support team in house.
-    - Also provisioned Desktops are billed on the usage basis only.
+  - It's cloud hosted Windows it can be accessed any location through browser.
+  - With this we can move our local Windows provisioning for application development of any purpose to the cloud.
+  - Provisoning of Windows systems will be done in minitues.
+  - It will enhance security as these cloud hosted machines are already integrated with other AZ services
+    like AZ Active Directory (AZ AD) and AZ Role based Access (RBAC).
+  - With this kind of integration we can easily control who can access what type of resources.
+  - Also in same single VM we can enable multiple users to access different Desktops.
+  - This will reduce need to have Desktop Virtualization support team in house.
+  - Also provisioned Desktops are billed on the usage basis only.
+
+  ### Azure Containers (To run different type of OS on single host)
+
+   - Azure containers will provide ability to run different type of OS in single host.
+   - Unlike in VM we can only run or host one type of OS where as in Containers we can inclue different type of OS
+     whcih can run on single host.
+   - Compare to VM's AZ Containers are light weight in nature where it can be provisoned and scaled quickly.
+   - Conatiners are great choice when we want to run different types of OS specific apps in sinlge host.
+   - AZ containers are example of PaaS offering.
+
+
