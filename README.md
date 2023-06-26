@@ -224,4 +224,109 @@ Azure Fundamental Learning notes
    - Sites can be scaled quickly to handle high traffic.
    - Build-in load balancing and traffic manager provide high availability.
 
+# Azure Virtual Networking
+
+### AZ Virtual Networks and Subnets
+
+  - AZ Virtual Networks and Subnets enables AZ resoutces (VMs, Azure Web app, DBs etc) communicate with each other
+    withint the  AZ network, on-perm and over the internet.It provides following key capabilities.
+
+      - Isolation and Segmentation
+      - Internet Communication
+      - Communicate between AZ resources
+      - Communicate with on-perm resources
+      - Rote network traffic
+      - Filter netwok traffic
+      - Connect virtual networks
+      - AZ networ supports Public and private endpoints to communicate between internal and external resources.
+          - Public endpoints have a public IP address and can be accessed from anywhere in the world.
+          - Private endpoints exist within a virtaul network and have a private IP addresss from within address space/range of that
+            virtaul network.
+
+### Isolation and Segmentation
+
+  - Virtual networks will allows us to create multiple isolated virtual networks.
+  - When we create a virtual network we can define a private IP address space by using either public or private IP address ranges.
+  - This IP range exist only within that virtual netwrok and isn't internet routable.
+  - We can divide that virtual network IP space into multiple subnets and allocate part of the defined address space to each named subnet.
+  - For these subnet's IP name resolution we can use Azure name resolution service.
+
+### Internet Communication (Through public IP address or public/Internet facing load balancer)
+
+  - To comminicate between AZ resources we can do in 2 ways.
+
+      - By default virtual networks connect multiple AZ resources like VMs, App Service Environment for Power Apps,
+        AZ kubernetes Service, AZ virtual machine Scale sets.
+      - Service Endpoints can connect to other AZ resource types like AZ SQL DBs and storage Accounts.
+
+### On-prem Communication AZ resources
+
+  - Point-to-Site virtual private network connections are from a computer outside of organization into corporate network.
+    This communication client computer initiates an encrypted VPN connection to connect AZ virtual network.
+
+  - Site-to-Site virtual private networks links on-perm VPN device or gateway to AZ VPN gateway in a virtual network.
+    In this mode device in AZ can appear being local to on-perm network. This connection is encrypted and works over internet.
+
+  - AZ Express Route provides a dedicated private connectivity to Azure that doesn't travel over the internet.
+    It provide greater bandwidth and higher levels of security.
+
+### Network traffic Routing
+
+  - By default AZ routes traffic between connected networks, on-prem networks and internet. These setup can be overriden.
+  - Using Routetables we can define rules about how traffic should be directed. We can create more route table and define
+    how traffice to be routed between subnets.
+  - Border Gateway Protocal (BGP) works with AZ VPN gateways, AZ Route Server or AZ ExpressRoute to propagate on-per BGP route to
+    AZ virtual networks.
+
+### Filter network traffic
+
+  - Network security group resources are used to define multiple inbound and outbound security rules. Based on these
+    rules we can control traffic flow into networ based in IP, Port and protocol.
+
+  - Network virtual appliances are special VMs which carries a network funtion such as running a firewall or performing
+    area network optimization.
+
+### Connect Virtual networks (Peering)
+
+  - Peering is way of connecting two virual networks together and make their comminication private.
+  - Throuh peering two virtual networks comminicate via dedicated Microsoft network. This traffic never enter public internet.
+  - These virtual network can be in two different regions.
+
+# Azure Virtual Private Network (AZ VPN)
+
+  - AZ VPN's enables a secured connection between two private networks over the internet. Traffic between these networks encrypted.
+
+### VPN Gateways
+
+  - AZ VPN gateway is deployedd in a dedicated subnet of the virtual network abd ebable following connectivity.
+
+     - Connect on-prem datacenters to vitual networks through a Site-to-Site connection.
+     - Connect individual devices to virtual networks through a Point-to-Site connection.
+     - Connect virtaul networks to other virtual networks through a network-to-network connection.
+     - A virtual network can have only one VPN gateway deployed. But it can connect to multiple locations like other virtual networks,
+       on-prem datacenters, other virtual networks.
+     - There are 2 types of VPN gateways 1. Policy based, 2. Route based.The main difference in the two type of VPN gateway is
+       how traffic is encrypted.
+     - Policy-based VPN gateway specify statically the IP address of packets that should be encyrpted through each tunnel.
+     - Route-based gateways IPSec tunnels are modeled as a network interface or virtual tunner interface. IP routing will
+       (static route or dynamic routing protocols)decided which one of these tunnes interface to use when sending each packet.
+       Route-based VPN's are preferred connection method for on-prem devices as they are more resilient to topology changes.
+
+### High-availability Scenarios
+
+  - Active/Standby - By default VPN gateways are deployed as two instances in active/standby configuration.
+    In case of any event for active VPN standby will assume the role of Active in few seconds for planned maintenance and
+    within 90 seconds for unplanned disruptions.
+
+  - Active/active - In this mode we can deploy two VPN gateways by assign unique public IP address to each instance and create
+    a seperate tunnels froom the on-prem device to each IP address.
+
+  - Express Route failover - Express Routes have built in resiliency configuration. But it can't gurantee during cable outages.
+    In this scenario we can deploy VPN gateways as secure failover path for Express Route connections during the failover
+    traffic is routed to internet through this VPN gateways.
+
+### Zone-redundant gateways
+
+  - In regions that support availability zones VPN gateways and Express Route gateways can be deployed zone-redundant configuration.
+    This will bring higher availability to virtual network gateways.
 
