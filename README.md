@@ -330,3 +330,52 @@ Azure Fundamental Learning notes
   - In regions that support availability zones VPN gateways and Express Route gateways can be deployed zone-redundant configuration.
     This will bring higher availability to virtual network gateways.
 
+# Azure Storage Accounts
+
+  - A storage account provides a unique namespace for Azure storage data that's accessible from anywhere in the world over
+    HTTP or HTTPS.
+  - This storage accounts is secure, highly available, durable and massively scalable.
+  - Creation of Storage Account will determine by picking correct account type and this account type determines storage services
+    redundancy options baed on use cases.Following are list of available redundancy options.
+
+      - Locally redundant storage (LRS)
+      - Geo-redundant storage (GRS)
+      - Read-access geo-redundant storage (RA-GRS)
+      - Zone-redundant storage (ZRS)
+      - Geo-zone-redundant storage (GZRS)
+      - Read-access geo-zone-redundant storage (RA-GZRS)
+
+## Account Types and Usage patterns/possible use case scenrios
+
+### Standard general-purpose v2
+
+  - Standard storgae account type for blobs,file shares,queues and tables.
+  - Recommended for most scenarios using Azure Storage.
+  - If we need network file system (NFS) then we can use the premium file shares account type.
+
+### Premium block blobs
+
+  - This is premium storage account type for block blobs and append blobs.
+  - Recommended for scenarios with high transactions rates or that smaller objects or requires
+    consistently low storage latency.
+
+### Premium file shares
+
+  - It only for file shares.
+  - Recommended for enterprise or high-performance scale applications.
+  - This recommended when we need support for Server Message Block (SMB) and NFS files shares.
+
+### Premium page blobs
+
+  - Premium storage account type for page blobs only.
+
+### Storage Account Endpoints (Storage Account + Storage Service)
+
+  - Each storage account will have global uniqueue account name. Combination of Storage Account Name with
+    respective storage account service will form a Storage Account Service Endpoint.
+
+     - Storage Account names must be between 2 and 24 characters in length and may contain numbers and lowercase
+       letters only.
+     - Storage account name must be uniqueu with Azure.
+
+       Ex -> https://<storage-account-name>.blob.core.windows.net
