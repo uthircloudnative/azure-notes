@@ -436,3 +436,49 @@ Azure Fundamental Learning notes
      - GZRS -> Geo Zone Redundant Storage
          - Data is copied to multi zone data centers in Primary region synchronously and three copies of the same data is stored in secondary region single data center asynchronously.
        
+# Azure Storage Services
+
+  - Blob Storage
+  - Azure Files
+  - Azure Queues
+  - Azure Disks
+
+### Blob Storage
+
+  - Blob Storage stores text and binary form of data at massive scale.
+  - It supporst unstructured data so it can be applicable for different type of use cases.
+  - With this we can store large volume of Audio and Video files, log events, IoT specific data at massive scale.
+  - Developer don't need to worry about storage space.
+  - This data can be easily accessable over the internet throuh HTTP & HTTPS.
+
+### Blob Data access tiers (Based on frequency of access and planned retention)
+
+  - Hot Access tier -> Optimized for storing data that is accessed frequently (images for websites)
+      - Can be set Account level
+      - Can be set Blob level during or after upload
+  - Cool Access tier -> Optimized for infrequently accessed data and stored for at least 30 days (Customer invoice)
+      - Can be set Account level
+      - Can be set Blob level during or after upload
+      - Lower availability and higher access cost.
+  - Archive Access tier -> Data which is rarely accessed and stored at least 180 days with flexible latency requirements.
+      - Data is stored offline and offers lowest storage cost.
+      - But high cost to regudrate and access data.
+
+### Azure Files
+
+  - Offers fully managed file shares in the cloud that are accessible via industry standard Server Message Block (SMB) or
+    Network File System (NFS) protocols.
+  - These files shares can be mounted concurrently by cloud or on-perm deployments.
+  - Server Message Block Azure files are accessible from Windows, Linux and macOS clients. Alos it can be cahced on Windoes Servers.
+  - NFS Azure files shares are accessible from Linux and macOS.
+
+### Azure Queue Storage
+
+  - Azure Queue storage we can store large number of messages as long as Azure Account storage has space to allow storage.
+  - Each message can be up to 64 KB in Size.
+  - Store messages can be accessed via internet through HTTP or HTTPS calls with authentication enabled.
+
+### Disk Storage
+
+  - Azure managed disk for VM's. These are used for block-level storage volumes managed by Azure.
+  - These are virtualized physical disk and managed by Azure for us.
