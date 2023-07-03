@@ -373,9 +373,66 @@ Azure Fundamental Learning notes
 
   - Each storage account will have global uniqueue account name. Combination of Storage Account Name with
     respective storage account service will form a Storage Account Service Endpoint.
-
-     - Storage Account names must be between 2 and 24 characters in length and may contain numbers and lowercase
+  - Storage Account names must be between 2 and 24 characters in length and may contain numbers and lowercase
        letters only.
      - Storage account name must be uniqueu with Azure.
 
        Ex -> https://<storage-account-name>.blob.core.windows.net
+
+# Azure Storage Redundancy
+
+  - Azure Storage will always stores multiple copies of data based on type of storage account and its redundancy preference.
+  - It helps to recover data in the event of any type of outages.
+  - Following factors detemine which type of redundancy option we need to choose.
+
+      - How data is replicated in the primary region.
+      - Wheather data is replicated in regional level or not. This is to ensure any regional level disaster
+        will keep our data safe.
+      - Whether application requires read access to the replicated data in the secondary region if the primary region
+        becomes unavailable.
+
+### Primary Region Redundancy (LRS & ZRS)
+
+  - In Azure Storage account data is always replicated 3 times in the Primary Reegion.
+  - There are 2 types of Primary region Redundancy is possible.
+
+      - LRS -> Locally Redundant Storage
+      - ZRS -> Zone Redundant Storage
+
+### LRS -> Locally Redundant Storage (Data stored in Single Data Center)
+
+  - Thress copies of Data is stored in Single Data center of the primary region.
+  - This is least cost efficient storage option and provides 11 nines of durability.
+  - This type of storage can help us to protect server rack and dive failures. But if any issue to that
+    data center(major fire in the building and any natural disaster etc) entire data will be lost.
+  - To avoid this kind of issues we can use ZRS (Zone Redundant Storage) or GZRS (Geo Zone Redundant Storage)
+
+### Zone Redundant Storage (Data is stored in 3 different Zones in Same Region)
+
+  - In ZRS same data is replicated in 3 different data centers of 3 different AZ of the same region.
+  - It offers 12 nines of durability over year.
+  - In this type of storage data can be access for both read and write even if a zone is unavailable.
+  - No remounting of Azure file shares from connected clients is required.
+  - If zone becomes unavailable Azure undertakes networking updates such as DNS repointing. This migh impact
+    the application until those updates are completed successfully.
+  - This type of storage is recommended where we need high availability and where we have some restriction
+    based on geo graphy due to govenment regulations on data movement.
+
+### Secondary Region Redundancy (Replication of data in Secondary Region)
+
+  - In this type of Storage data can be stored in another region other than Primary Region through Azure Region pairs.
+  - This secondrary region will get data asynchronously from primary region.
+  - So if any issue during primary region we have to make a failove to secondary region. Once failover is completed
+    Secondary region will become a primary region.Due to this Secondary region data won't be available for Read or Write.
+  - During any failure in primary region and switch to the Secondary region will have time delay and there is a possiblity
+    of data loss during this duration.
+  - The intervel between most recent writes to primary region and last write to secondary region is called recover point object RPO.
+  - Azure storage has an RPO of 15 mins, but currently no guranteed SLA of the same.
+  - Azure supports two type of Secondary region data coping.
+
+     - GRS -> Geo Redundant Storage 
+         - Data is copied to three times in single physical location synchronously. And same date is copied to another region single data center in Secondary region. It offeres 16 nines of durability.
+           
+     - GZRS -> Geo Zone Redundant Storage
+         - Data is copied to multi zone data centers in Primary region synchronously and three copies of the same data is stored in secondary region single data center asynchronously.
+       
