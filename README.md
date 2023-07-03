@@ -482,3 +482,41 @@ Azure Fundamental Learning notes
 
   - Azure managed disk for VM's. These are used for block-level storage volumes managed by Azure.
   - These are virtualized physical disk and managed by Azure for us.
+
+### Azure Data migration options
+
+  - Azure Migrate -> Helps to migrate on-perm to cloud (Azure)
+  - It provides set of tools to migrate on-perm data to Cloud most efficiently.
+
+      - Azure Migrate: Discover and Assessment -> Acess and plan
+      - Azure Migrate: Server Migration -> Migrate physical servers to Cloud
+      - Data Migration Assistant -> To acess SQL servers.
+      - Database Migration Service -> To migrate on-perm DB's mostly SQL based DB's
+      - Web app migration assitant -> To migrate on-perm .NET and PHP baed apps to Azure app service
+      - Azure Data Box -> To move large data through physical box.
+
+### File movement options
+
+  - Azure has three tools AzCopy, Azure Storage Explorer and Azure Fily Sync to copy files or blobs.
+
+### AzCope (To Copy files or blobs) 
+
+  - It's a command-line utility tool to support copy files or blobs
+  - With this we can upload, download or copy files between storage accounts and even synchronize files.
+  - This can be integrated with other providers and move files between different cloud vendors.
+  - AzCopy will support synchronization of files in one direction only.
+
+### Azure Storage Explorer
+
+  - A standalone GUI to manage file and blobs in Azure storage account.
+  - It works in Windows, macOS and Linux.
+  - It uses AzCopy under the hood.
+
+### Azure File Sync
+
+  - It will act as intermediate component between local windows server and Azure Files in cloud.
+  - It provide bi-directional sync between you local server and Azure file.
+  - With this we can use any protocl that's available on windows Server to access data locally including SMB,NFS and FTPS.
+  - Have as many caches we need across the world.
+  - Replace failed local server by installing Azure File Sync on a new server in the same data center.
+  - Configure cloud tiering so the most frequently accessed files are replicated locally, while infrequently accessed files are kept in the cloud until its requested.
