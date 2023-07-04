@@ -520,3 +520,37 @@ Azure Fundamental Learning notes
   - Have as many caches we need across the world.
   - Replace failed local server by installing Azure File Sync on a new server in the same data center.
   - Configure cloud tiering so the most frequently accessed files are replicated locally, while infrequently accessed files are kept in the cloud until its requested.
+
+# Azure Identity, Access and Security
+
+### Azure Directory Service (Azure AD (Active Directory))
+
+  - Active Directory running on windows server will provides an identity and access management service. This might be manged by an
+    organization and run on local on-perm.
+  - Azure Active Directory which is managed by Azure will provide support to manage access to both Microsoft cloud applications
+    and application which we develop and deploy on cloud.
+  - With Azure AD we can use it globally to control access management of cloud applications.
+  - With on-perm Active directory Microsoft doesn'y monitor singn-in attempts. But with Azure AD Microsft help to identify
+    suspicious sign-in attempts at no extra cost.
+  - It can be used by
+      - IT administrartors -> To control access to apps and resources based on business requirements
+      - App Developers -> To enable SSO functionality
+      - Users -> Password Re-set
+      - Online service subscribers -> Subscribers of Microsoft 365, Mocriosoft Office 365, Azure etc will already using it.
+  - It can do and support following things.
+      - Authentication
+      - SSO
+      - Application Management -> By providong Application proxy, SaaS apps, My Apps portal and SSO.
+      - Device Management -> To manage device based access. Using Azure AD we can control access based on specific registered device.
+  - Using Azure AD Connect we can connect both on-perm AD and Azure AD. But both the systems will maintian two different identities.
+    Azure AD connect synchronizes user identities between on-perm AD with Azure AD.
+
+### Azure Active Directory Domain Services
+
+  - It provides services like domain join, group policy, light weight directory access protocol (LDAP) and Kerberos/NTLM
+    authentication.
+  - It's a cloud managed service so users don't have to manage or maintin it.
+  - It mainly used to manage/run legacy application in the cloud that can't use modern authentication methods.
+  - Azure AD DS integrates with existing Azure tenant. This integration allows user singn into services and applications
+    connected to managed domain using their existing credentials.
+  - Azure AD DS is configured to perform one-way synchroniztion from Azure AD to Azure AD DS.
