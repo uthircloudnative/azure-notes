@@ -31,6 +31,7 @@ Azure Fundamental Learning notes
      date // This command will give current date in BASH CLI
 
      az upgrade // This will update upgrade CLI
+
 ```
 
   ### Azure CLI (Interactive mode)
@@ -554,3 +555,16 @@ Azure Fundamental Learning notes
   - Azure AD DS integrates with existing Azure tenant. This integration allows user singn into services and applications
     connected to managed domain using their existing credentials.
   - Azure AD DS is configured to perform one-way synchroniztion from Azure AD to Azure AD DS.
+
+### Azure Authentication methods
+
+  - SSO (Single Sign On)
+  - MFA (Multi Factor Authentication)
+  - Passwordless Authentication
+    - Windows Hellow for Business -> Tied to user Device like laptop and a biometric or PIN is attached/setup an extra authentication
+                                     mechanism.
+    - Microsoft Authenticator App -> An app which is downloaded in to users devive and registered which provide a authentication PIN.
+    - FIDO2 Security Keys -> Fast Identity Online supports and promote open authentication standards and reduce the use of passwords.
+                             with this user can register and select a FIDO2 security key at the sign-in interface as main means of 
+                             authentication. These keys are are USB devices or Bluetooth. Then these hardware devices are used to
+                             authenticate instead of password.
