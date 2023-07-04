@@ -568,3 +568,62 @@ Azure Fundamental Learning notes
                              with this user can register and select a FIDO2 security key at the sign-in interface as main means of 
                              authentication. These keys are are USB devices or Bluetooth. Then these hardware devices are used to
                              authenticate instead of password.
+      
+### Azure external identities
+
+  - An external identities are one might be external users, apps, devices etc.
+  - Azure will support to mange these external users authentication usinh Azure AD External Identites.
+  - These users can bring their own identity through which we can give our Azure app access. Azure will support this
+    kind of authentication using Azure AD External Identities.
+
+      - Business to business (B2B) collaboration -> Collaborate with external users by letting them use their preferred identity to
+                                                    sign-in our micorsoft applications. B2B collaboration user are mostly guest users.
+      - B2B Direct Connect -> Establish mutual two way trust with Azure AD org for seamless collaboration through Team shared channels.
+                              B2B direct connect users are not in our directory but they are managed by teams admin.
+      - Azure AD Business to Consumer (B2C) -> Consumers of published apps.
+   
+### Azure conditional Access
+
+  - It's a Tool which allows Azure Active directory uses to allow or deny access to a resources based on identity signals.
+  - A signal is user, location of user, device of user etc.
+  - Based on this signal Conditional Access tool will decide to allow or deny the user to access that resource.
+
+### Azure RBAC (Role Based Access Control)
+
+  - To control access to a resource based on defined allowed rules.
+  - There are 2 type of components. 1. Scope , 2. Role
+      - Scope A management group, Single Subscription, Resource Group, Single Resource.
+      - People belong to these Scope will be given different type of access like Reader, Resource specific, Custom, Owner or
+        Contributor kind of access.
+  - In RBAC when access is granted to parent Scope then that access will be inherited to all the users under the group.
+  - RBAC access contorl is enfored by Resource Manger service in Azure.
+
+### Zero Trust Model (Design system for worst case scenario)
+
+  - Always have security layer designed for worst case scenario in mind. It's based on following principle.
+      - Verify explicitly -> Always authenticate and authorize based on all available data points.
+      - Use least privilege access -> Limit user access with Just-in-Time and Just-Enough-Access (JIT/JEA) risk based
+        adaptive policies and data protection.
+      - Assume breach -> Minimize blast radius and segment access and verify E2E encryption. Use effective analytics to get visibility,
+                         drive threat detection and improve defence.
+
+### Defence-in-Depth
+
+  - It provides a framework or methodalogy proetction of data which is secured by 7 layers of security consideration.
+
+  - Physical Security -> Limited and only authorized access to physical data center.
+  - Identity and Access -> Access is granted to what's needed and Sign-in events are properly logged.
+  - Perimeter -> It protects data from Network based attacks against resource. User DDoS protection to filter large-scale attacks
+                 before it can affect system availability. Use perimeter firewalls to indentify and alert on malicious attacks.
+  - Network -> Limiting network connectivity to resources. Use deny by default rules.
+  - Compute -> Secure access to VM's and implement endpoint protection and make sure system is patched properly.
+  - Application -> Integrating Scurity Vulnarability checks as part of Application Development life cycle.
+  - Data -> Those who store and access data should be responsible for security of it.
+
+### Microsoft Defender for Cloud (To Secure Azure, on-perm, Multi Cloud resources) 
+
+  - It provides various tools to secure Azure, on-perm and other cloud provider resources.
+  - It gather all the security specific data and logs and analysis send specific aletrs based on analysis.
+  - For  Hybrid and multicloud environments Microsoft Defender plans extent to non Azure machines with help of Azure Arc.
+  - Cloud Security Posture Management (CSPM) features are extended to multicloud machines.
+  - It works based on 3 principles Assess, Secure and Defend.
