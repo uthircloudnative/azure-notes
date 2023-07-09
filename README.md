@@ -627,3 +627,28 @@ Azure Fundamental Learning notes
   - For  Hybrid and multicloud environments Microsoft Defender plans extent to non Azure machines with help of Azure Arc.
   - Cloud Security Posture Management (CSPM) features are extended to multicloud machines.
   - It works based on 3 principles Assess, Secure and Defend.
+
+# Factors which affect Azure Cost
+
+  - With cloud we will not worry about initial cost of setting up infrastructure and investment on those skillset(CapEx-Capital Expenditure).
+    We only need to pay what we will be using by pay-you-use model. This is called OpEx - Operational Expenditure.
+
+    Following factors will impact cost of the Azure.
+
+      - Resource Type -> Type of Resource we choose will be one of the major factore will have cost component. Like what type
+                          of storage account and its access pattern and region in which we create this resource etc.
+
+      - Consumption -> With Pay-as-you go or use model we will be paying what is the resources we are using actively.
+                       With this when we choose a particular resource if we choose it with long term useage model we will
+                       get huge discounts etc.
+
+      - Maintenance -> With Resource groups based on need we can scale up or down our resources based on demand.
+
+      - Geography -> Based on region in which we create a resource it will have a cost factor associated with it.
+
+      - Network Traffic -> Data movement between resources and in and out of the cloud will be one of the important factor
+                           deciding cost. Mostly data which coming in to Azure will be free but data going out will be costly.
+
+      - Subscription Type -> Type of subscription will decide the overall cost of Cloud in Azure. Free subscription will be no cost to us.
+
+      - Azure Marketplace -> Apart from Azure Services there are multiple third party vendor
