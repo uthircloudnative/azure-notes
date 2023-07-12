@@ -651,4 +651,18 @@ Azure Fundamental Learning notes
 
       - Subscription Type -> Type of subscription will decide the overall cost of Cloud in Azure. Free subscription will be no cost to us.
 
-      - Azure Marketplace -> Apart from Azure Services there are multiple third party vendor
+      - Azure Marketplace -> Apart from Azure Services there are multiple third party vendor.
+
+### Pricing Calculator
+
+  - Used to calculate cost of Azure resource. It will give an estimate cost of Individual Azure resource.
+
+  - With this calculator we can't provision any resource as such.
+
+### Total Cost of Ownership (TCO)
+
+  - TCO calculator is used to derive an estimate to move on-perm configuration to Azure Cloud.
+  - With this we can provide our current on-perm server details, storage, Network bandwidth info and it
+    will provide an anticipated cost for when we create/move this infra to Azure.
+
+
