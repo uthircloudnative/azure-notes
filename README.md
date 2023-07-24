@@ -75,7 +75,7 @@ https://learn.microsoft.com/en-us/training/paths/microsoft-azure-fundamentals-de
 
       - Non-Regional Services - Services are always available from Azure geographies and resilient to zone-wide outages as well as region-wide outages.
 
-### Region Pais (West US & East US)
+### Region Pairs (West US & East US)
 
     - Two Azure Regions are paired with one another on the same geography.
     - These paired regions are mostly 300 miles apart eachother.
